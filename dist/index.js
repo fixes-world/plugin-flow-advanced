@@ -2199,8 +2199,8 @@ AccountProvider = _ts_decorate7([
 globalContainer7.bind(AccountProvider).toSelf().inRequestScope();
 
 // src/plugin.ts
-var basicFlowPlugin = {
-  name: "flow-basic",
+var advancedFlowPlugin = {
+  name: "flow-advanced",
   description: "Flow Plugin for Eliza with accounts management features.",
   actions: [
     TransferAction,
@@ -2220,7 +2220,7 @@ var basicFlowPlugin = {
 };
 
 // src/index.ts
-var index_default = basicFlowPlugin;
+var index_default = advancedFlowPlugin;
 export {
   Content,
   EnsureTokenRegisteredAction,
@@ -2231,7 +2231,7 @@ export {
   GetTokenInfoContent,
   TransferAction,
   TransferContent,
-  basicFlowPlugin,
+  advancedFlowPlugin,
   index_default as default,
   scripts
 };

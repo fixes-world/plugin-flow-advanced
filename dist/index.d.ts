@@ -222,10 +222,10 @@ declare class EnsureTokenRegisteredAction extends BaseFlowInjectableAction<Conte
 }
 
 /**
- * Basic Flow Plugin configuration
+ * Advanced Flow Plugin configuration
  * Required for the plugin to be loaded, will be exported as default
  */
-declare const basicFlowPlugin: PluginOptions;
+declare const advancedFlowPlugin: PluginOptions;
 
 declare const scripts: {
     getFlowPrice: any;
@@ -239,4 +239,4 @@ declare const scripts: {
     isEVMAssetRegistered: any;
 };
 
-export { Content, EnsureTokenRegisteredAction, EnsureUserAccountExistsAction, GetPriceAction, GetPriceContent, GetTokenInfoAction, GetTokenInfoContent, TransferAction, TransferContent, basicFlowPlugin, basicFlowPlugin as default, scripts };
+export { Content, EnsureTokenRegisteredAction, EnsureUserAccountExistsAction, GetPriceAction, GetPriceContent, GetTokenInfoAction, GetTokenInfoContent, TransferAction, TransferContent, advancedFlowPlugin, advancedFlowPlugin as default, scripts };

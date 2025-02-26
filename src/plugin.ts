@@ -11,11 +11,11 @@ import { AccountsPoolService } from "./services/acctPool.service";
 import { AccountProvider } from "./providers/account.provider";
 
 /**
- * Basic Flow Plugin configuration
+ * Advanced Flow Plugin configuration
  * Required for the plugin to be loaded, will be exported as default
  */
-export const basicFlowPlugin: PluginOptions = {
-    name: "flow-basic",
+export const advancedFlowPlugin: PluginOptions = {
+    name: "flow-advanced",
     description: "Flow Plugin for Eliza with accounts management features.",
     actions: [
         TransferAction,

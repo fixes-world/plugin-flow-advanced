@@ -2,6 +2,6 @@ export * from "./actions";
 export * from "./plugin";
 export * from "./assets/scripts.defs";
 
-import { basicFlowPlugin } from "./plugin";
+import { advancedFlowPlugin } from "./plugin";
 
-export default basicFlowPlugin;
+export default advancedFlowPlugin;
