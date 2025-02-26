@@ -30,9 +30,9 @@
         "format:fix": "biome format --write ."
     },
     "dependencies": {
-        "@elizaos/core": "workspace:*",
-        "@elizaos-plugins/plugin-di": "workspace:*",
-        "@elizaos-plugins/plugin-flow": "workspace:*",
+        "@elizaos/core": "0.25.8",
+        "@elizaos-plugins/plugin-di": "github:fixes-world/plugin-di",
+        "@elizaos-plugins/plugin-flow": "github:fixes-world/plugin-flow",
         "zod": "3.23.8"
     },
     "devDependencies": {
