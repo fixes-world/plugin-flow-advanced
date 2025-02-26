@@ -30,7 +30,6 @@
         "format:fix": "biome format --write ."
     },
     "dependencies": {
-        "@elizaos/core": "0.25.8",
         "@elizaos-plugins/plugin-di": "github:fixes-world/plugin-di",
         "@elizaos-plugins/plugin-flow": "github:fixes-world/plugin-flow",
         "zod": "3.23.8"
@@ -41,6 +40,7 @@
         "vitest": "2.1.4"
     },
     "peerDependencies": {
+        "@elizaos/core": "0.25.8",
         "inversify": "6.2.1",
         "reflect-metadata": "0.2.2",
         "uuid": "11.0.3"
