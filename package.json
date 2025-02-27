@@ -37,9 +37,9 @@
         "vitest": "2.1.4"
     },
     "peerDependencies": {
-        "@elizaos/core": "0.25.8",
-        "@elizaos-plugins/plugin-di": "github:fixes-world/plugin-di",
-        "@elizaos-plugins/plugin-flow": "github:fixes-world/plugin-flow",
+        "@elizaos/core": "workspace:*",
+        "@elizaos-plugins/plugin-di": "workspace:*",
+        "@elizaos-plugins/plugin-flow": "workspace:*",
         "inversify": "6.2.1",
         "reflect-metadata": "0.2.2",
         "uuid": "11.0.3",
