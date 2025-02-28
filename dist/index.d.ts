@@ -1,4 +1,4 @@
-import { Service, ServiceType, IAgentRuntime, Memory, State, HandlerCallback, Action, ActionExample } from '@elizaos/core';
+import { Service, ServiceType, IAgentRuntime, Memory, State, HandlerCallback, Action, ActionExample, Provider } from '@elizaos/core';
 import { FlowWalletService, FlowAccountBalanceInfo, TransactionCallbacks, TransactionSentResponse, BaseFlowInjectableAction, ScriptQueryResponse, CacheProvider } from '@elizaos-plugins/plugin-flow';
 import { PluginOptions } from '@elizaos-plugins/plugin-di';
 
@@ -221,12 +221,6 @@ declare class EnsureTokenRegisteredAction extends BaseFlowInjectableAction<Conte
     execute(content: Content | null, runtime: IAgentRuntime, message: Memory, _state?: State, callback?: HandlerCallback): Promise<void>;
 }
 
-/**
- * Advanced Flow Plugin configuration
- * Required for the plugin to be loaded, will be exported as default
- */
-declare const advancedFlowPlugin: PluginOptions;
-
 declare const scripts: {
     getFlowPrice: any;
     getStFlowPrice: any;
@@ -239,4 +233,34 @@ declare const scripts: {
     isEVMAssetRegistered: any;
 };
 
-export { Content, EnsureTokenRegisteredAction, EnsureUserAccountExistsAction, GetPriceAction, GetPriceContent, GetTokenInfoAction, GetTokenInfoContent, TransferAction, TransferContent, advancedFlowPlugin, advancedFlowPlugin as default, scripts };
+declare const transactions: {
+    initAgentAccount: any;
+    acctPoolCreateChildAccount: any;
+    acctPoolEVMTransferERC20: any;
+    acctPoolFlowTokenDynamicTransfer: any;
+    acctPoolFTGenericTransfer: any;
+    tlRegisterEVMAsset: any;
+    tlRegisterCadenceAsset: any;
+    tlRegisterCadenceAssetNoBridge: any;
+};
+
+/**
+ * Wallet provider
+ */
+declare class AccountProvider implements Provider {
+    private readonly acctPoolService;
+    constructor(acctPoolService: AccountsPoolService);
+    /**
+     * Eliza provider `get` method
+     * @returns The message to be injected into the context
+     */
+    get(_runtime: IAgentRuntime, message: Memory, state?: State): Promise<string | null>;
+}
+
+/**
+ * Advanced Flow Plugin configuration
+ * Required for the plugin to be loaded, will be exported as default
+ */
+declare const advancedFlowPlugin: PluginOptions;
+
+export { AccountProvider, AccountsPoolService, Content, EnsureTokenRegisteredAction, EnsureUserAccountExistsAction, GetPriceAction, GetPriceContent, GetTokenInfoAction, GetTokenInfoContent, TransferAction, TransferContent, advancedFlowPlugin, advancedFlowPlugin as default, scripts, transactions };

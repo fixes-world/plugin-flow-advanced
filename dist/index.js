@@ -2132,9 +2132,6 @@ EnsureTokenRegisteredAction = _ts_decorate6([
 ], EnsureTokenRegisteredAction);
 globalContainer6.bind(EnsureTokenRegisteredAction).toSelf();
 
-// src/plugin.ts
-import { FlowWalletService as FlowWalletService3 } from "@elizaos-plugins/plugin-flow";
-
 // src/providers/account.provider.ts
 import { injectable as injectable7, inject as inject5 } from "inversify";
 import { elizaLogger as elizaLogger7 } from "@elizaos/core";
@@ -2199,6 +2196,7 @@ AccountProvider = _ts_decorate7([
 globalContainer7.bind(AccountProvider).toSelf().inRequestScope();
 
 // src/plugin.ts
+import { FlowWalletService as FlowWalletService3 } from "@elizaos-plugins/plugin-flow";
 var advancedFlowPlugin = {
   name: "flow-advanced",
   description: "Flow Plugin for Eliza with accounts management features.",
@@ -2222,6 +2220,8 @@ var advancedFlowPlugin = {
 // src/index.ts
 var index_default = advancedFlowPlugin;
 export {
+  AccountProvider,
+  AccountsPoolService,
   Content,
   EnsureTokenRegisteredAction,
   EnsureUserAccountExistsAction,
@@ -2233,6 +2233,7 @@ export {
   TransferContent,
   advancedFlowPlugin,
   index_default as default,
-  scripts
+  scripts,
+  transactions
 };
 //# sourceMappingURL=index.js.map
